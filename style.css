@@ -1,0 +1,182 @@
+/* ==================== 1. GLOBAL & BOX SIZING ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    /* Kompensasi padding agar konten tidak tertutup navbar fixed */
+    padding-top: 80px; 
+}
+
+/* ==================== 2. NAVBAR (position: fixed) ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 30px;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* ==================== 3. SUB-JUDUL KATEGORI (position: sticky) ==================== */
+.sticky-category {
+    position: sticky;
+    top: 70px; /* Menempel tepat di bawah navbar fixed */
+    background-color: #e9ecef;
+    padding: 15px 30px;
+    text-align: center;
+    z-index: 900;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.sticky-category h2 {
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+/* ==================== 4. LAYOUT KARTU PRODUK ==================== */
+.main-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.product-grid {
+    text-align: center; /* Mendukung display inline-block */
+}
+
+.product-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 15px;
+    padding: 15px;
+    text-align: left;
+    position: relative; /* Induk untuk badge absolute */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek Hover Kartu Menebal */
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* ==================== 5. BADGE & GAMBAR (overflow: hidden) ==================== */
+.badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.badge.new {
+    background-color: #2ecc71;
+}
+
+.img-container {
+    width: 100%;
+    height: 150px;
+    overflow: hidden; /* Mengunci gambar agar terpotong rapi */
+    border-radius: 8px; /* Gambar membulat di dalam kartu */
+    margin-bottom: 15px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+/* ==================== 6. INFORMASI PRODUK & TOMBOL ==================== */
+.product-info h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #2980b9;
+}
+
+/* ==================== 7. FOOTER ==================== */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 13px;
+    margin-top: 60px;
+}
